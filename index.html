@@ -135,6 +135,52 @@
     languageSelect.addEventListener('change', () => {
       localStorage.setItem('language', languageSelect.value);
     });
+
+    <!-- JavaScript for Toggle Menu and Dropdowns -->
+
+  
+    // Toggle for small screens
+    function toggleMenu() {
+      var nav = document.getElementById("nav-links");
+      if (nav.style.display === "flex") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "flex";
+        nav.style.flexDirection = "column";
+        nav.style.alignItems = "flex-start";
+      }
+    }
+
+    // Show dropdowns on hover (only for desktop)
+    document.querySelectorAll("li").forEach(item => {
+      item.addEventListener("mouseenter", () => {
+        let dropdown = item.querySelector(".dropdown");
+        if (dropdown) dropdown.style.display = "block";
+      });
+      item.addEventListener("mouseleave", () => {
+        let dropdown = item.querySelector(".dropdown");
+        if (dropdown) dropdown.style.display = "none";
+      });
+    });
+
+    // Responsive hamburger icon display
+    function handleResize() {
+      const menuIcon = document.getElementById("menu-icon");
+      const nav = document.getElementById("nav-links");
+      if (window.innerWidth <= 768) {
+        menuIcon.style.display = "block";
+        nav.style.display = "none";
+      } else {
+        menuIcon.style.display = "none";
+        nav.style.display = "flex";
+        nav.style.flexDirection = "row";
+        nav.style.justifyContent = "center";
+      }
+    }
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("load", handleResize);
+  
   
   </script>
 </body>
