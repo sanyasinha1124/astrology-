@@ -8,266 +8,76 @@
   <link rel="stylesheet" href="styles.css" />
   
 </head>
-
-  <nav class="bg-white shadow-md px-4 py-3">
-    <div class="flex items-center justify-between">
-      <div class="text-2xl font-bold text-indigo-700">AstroSite</div>
-      
-      <!-- Hamburger Button -->
-      <button id="menu-toggle" class="md:hidden focus:outline-none">
-        <svg class="w-7 h-7 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+  <!-- Top Menu -->
+  <nav class="bg-indigo-700 text-white px-4 py-2">
+    <div class="flex justify-between items-center">
+      <div class="text-lg font-semibold">🔯 AstroLokh</div>
+      <button class="md:hidden" onclick="toggleMenu('topMenu')">☰</button>
     </div>
-
-    <!-- Menu List -->
-    <ul id="menu" class="menu mt-4 hidden md:flex flex-col md:flex-row md:space-x-6">
-      <!-- Services -->
+    <ul id="topMenu" class="hidden md:flex flex-col md:flex-row md:space-x-6 mt-2 md:mt-0">
       <li class="dropdown relative">
-        <a href="#services" class="block py-2 font-medium">Services</a>
-        <ul class="dropdown-content pl-4 space-y-1 text-sm">
-          <li><a href="horoscope.html">Horoscope</a></li>
-          <li><a href="kundlimatch.html">Kundli Matching</a></li>
-          <li><a href="numerology.html">Numerology</a></li>
-          <li><a href="palmistry.html">Palmistry</a></li>
+        <a class="block py-1 md:py-2" href="#">Account</a>
+        <ul class="dropdown-menu absolute hidden bg-white text-black p-2 rounded shadow-md">
+          <li><a href="#" class="block px-2 py-1">Login</a></li>
+          <li><a href="#" class="block px-2 py-1">Register</a></li>
         </ul>
       </li>
-
-      <!-- Gemstones -->
-      <li class="dropdown relative">
-        <a href="gemstones.html" class="block py-2 font-medium">Gemstones</a>
-        <ul class="dropdown-content pl-4 space-y-1 text-sm">
-          <li><a href="ruby.html">Ruby</a></li>
-          <li><a href="emerald.html">Emerald</a></li>
-          <li><a href="bluesapphire.html">Blue Sapphire</a></li>
-          <li><a href="yellow.html">Yellow Sapphire</a></li>
-        </ul>
-      </li>
-
-      <!-- Instant Report -->
-      <li class="dropdown relative">
-        <a href="#report" class="block py-2 font-medium">Instant Report</a>
-        <ul class="dropdown-content pl-4 space-y-1 text-sm">
-          <li><a href="dailyprediction.html">Daily Prediction</a></li>
-          <li><a href="zodiacfinder.html">Zodiac Finder</a></li>
-        </ul>
-      </li>
-
-      <!-- Zodiac Sign -->
-      <li class="dropdown relative">
-        <a href="zodiac.html" class="block py-2 font-medium">Zodiac Sign</a>
-        <ul class="dropdown-content pl-4 space-y-1 text-sm">
-          <li><a href="#products">Aries</a></li>
-          <li><a href="#products">Taurus</a></li>
-          <li><a href="#products">Gemini</a></li>
-          <li><a href="#products">Cancer</a></li>
-        </ul>
-      </li>
-
-      <!-- Products -->
-      <li class="dropdown relative">
-        <a href="#products" class="block py-2 font-medium">Products</a>
-        <ul class="dropdown-content pl-4 space-y-1 text-sm">
-          <li><a href="#products">Yantra</a></li>
-          <li><a href="#products">Rudraksha</a></li>
-          <li><a href="#products">Puja Kits</a></li>
-          <li><a href="#products">Astro Books</a></li>
-        </ul>
-      </li>
-
-      <!-- Contact -->
-      <li class="dropdown relative">
-        <a href="#contact" class="block py-2 font-medium">Contact</a>
-        <ul class="dropdown-content pl-4 space-y-1 text-sm">
-          <li><a href="#contact">Email Us</a></li>
-          <li><a href="#contact">WhatsApp</a></li>
-          <li><a href="#contact">Live Chat</a></li>
-        </ul>
-      </li>
+      <li><a class="block py-1 md:py-2" href="#">Language</a></li>
+      <li><a class="block py-1 md:py-2" href="#">Wallet</a></li>
     </ul>
   </nav>
 
-
-<body>
-  <!-- Header -->
-  <header class="navbar">
-    <div class="container">
-      <h1 class="logo">🔯 AstroLokh</h1>
-     
-    
-
-     
-     <!-- Right Section: Search | Language | Cart -->
-  <div class="nav-extras">
-    <!-- Search -->
-    <div class="search-bar">
-      <input type="text" placeholder="Search..." />
-      <button type="submit">🔍</button>
+  <!-- Middle Menu -->
+  <nav class="bg-white shadow px-4 py-3">
+    <div class="flex justify-between items-center">
+      <div class="text-lg font-bold text-indigo-700">Menu</div>
+      <button class="md:hidden" onclick="toggleMenu('middleMenu')">☰</button>
     </div>
+    <ul id="middleMenu" class="hidden md:flex flex-col md:flex-row md:space-x-6 mt-2 md:mt-0">
+      <li class="dropdown relative">
+        <a class="block py-1 md:py-2" href="#">Services</a>
+        <ul class="dropdown-menu absolute hidden bg-white p-2 rounded shadow-md z-10">
+          <li><a href="#" class="block px-2 py-1">Horoscope</a></li>
+          <li><a href="#" class="block px-2 py-1">Numerology</a></li>
+        </ul>
+      </li>
+      <li class="dropdown relative">
+        <a class="block py-1 md:py-2" href="#">Gemstones</a>
+        <ul class="dropdown-menu absolute hidden bg-white p-2 rounded shadow-md z-10">
+          <li><a href="#" class="block px-2 py-1">Ruby</a></li>
+          <li><a href="#" class="block px-2 py-1">Emerald</a></li>
+        </ul>
+      </li>
+      <li><a class="block py-1 md:py-2" href="#">Chat</a></li>
+    </ul>
+  </nav>
 
-    <!-- Language Dropdown -->
-    <div class="dropdown lang-dropdown">
-      <button class="lang-btn">🌐 Language</button>
-      <ul class="dropdown-content">
-        <li><a href="#">English</a></li>
-        <li><a href="#">Hindi</a></li>
-        <li><a href="#">Telugu</a></li>
-        <li><a href="#">Tamil</a></li>
-      </ul>
+  <!-- Bottom Menu -->
+  <nav class="bg-indigo-100 px-4 py-3">
+    <div class="flex justify-between items-center">
+      <div class="text-lg font-semibold text-indigo-800">Explore</div>
+      <button class="md:hidden" onclick="toggleMenu('bottomMenu')">☰</button>
     </div>
+    <ul id="bottomMenu" class="hidden md:flex flex-col md:flex-row md:space-x-6 mt-2 md:mt-0">
+      <li class="dropdown relative">
+        <a class="block py-1 md:py-2" href="#">Reports</a>
+        <ul class="dropdown-menu absolute hidden bg-white p-2 rounded shadow-md z-10">
+          <li><a href="#" class="block px-2 py-1">Daily Prediction</a></li>
+          <li><a href="#" class="block px-2 py-1">Zodiac Finder</a></li>
+        </ul>
+      </li>
+      <li class="dropdown relative">
+        <a class="block py-1 md:py-2" href="#">Panchang</a>
+        <ul class="dropdown-menu absolute hidden bg-white p-2 rounded shadow-md z-10">
+          <li><a href="#" class="block px-2 py-1">Today</a></li>
+          <li><a href="#" class="block px-2 py-1">This Week</a></li>
+        </ul>
+      </li>
+      <li><a class="block py-1 md:py-2" href="#">Contact</a></li>
+    </ul>
+  </nav>
 
-    <!-- Cart Icon -->
-    <div class="cart">
-      <a href="#cart">🛒 Cart</a>
-    </div>
-          <!-- Extra Buttons -->
-    <div class="cart">
-      <a href="#cart">💬Chat with Astrolger</a>
-    </div>
-    <div class="cart">
-      <a href="#cart">💰Wallet</a>
-    </div>
-    <div class="cart">
-      <a href="index.login">Login</a>
-    </div>
-
-  </div>
-
-     
-    </div>
-   
-    
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-   <!-- Personalized Horoscope Section -->
-    <div class="bg-white shadow-md px-4 py-3 flex items-center justify-between">
-      <ul class="menu">
-
-      
-      
-      <li class="dropdown">
-  <a href="#services">Home</a>
-  <ul class="dropdown-content">
-    <li><a href="horoscope.html">Horoscope</a></li>
-    <li><a href="kundlimatch.html">Kundli Matching</a></li>
-    <li><a href="numerology.html">Numerology</a></li>
-    <li><a href="palmistry.html">Palmistry</a></li>
-  </ul>
-</li>
-
-    <li class="dropdown">
-      <a href="gemstones.html">Horoscope</a>
-      <ul class="dropdown-content">
-        <li><a href="ruby.html">Ruby</a></li>
-        <li><a href="emerald.html">Emerald</a></li>
-        <li><a href="bluesapphire.html">Blue Sapphire</a></li>
-        <li><a href="yellow.html">Yellow Sapphire</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#report">Astrology</a>
-      <ul class="dropdown-content">
-        <li><a href="dailyprediction.html">Daily Prediction</a></li>
-        <li><a href="zodiacfinder.html">Zodiac Finder</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="zodiac.html">2025</a>
-      <ul class="dropdown-content">
-        <li><a href="#products">Aries</a></li>
-        <li><a href="#products">Taurus</a></li>
-        <li><a href="#products">Gemini</a></li>
-        <li><a href="#products">Cancer</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#products">Occult</a>
-      <ul class="dropdown-content">
-        <li><a href="#products">Yantra</a></li>
-        <li><a href="#products">Rudraksha</a></li>
-        <li><a href="#products">Puja Kits</a></li>
-        <li><a href="#products">Astro Books</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#contact">Free Reports</a>
-      <ul class="dropdown-content">
-        <li><a href="#contact">Email Us</a></li>
-        <li><a href="#contact">WhatsApp</a></li>
-        <li><a href="#contact">Live Chat</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#contact">Healing</a>
-      <ul class="dropdown-content">
-        <li><a href="#contact">Email Us</a></li>
-        <li><a href="#contact">WhatsApp</a></li>
-        <li><a href="#contact">Live Chat</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#contact">Panchang</a>
-      <ul class="dropdown-content">
-        <li><a href="#contact">Email Us</a></li>
-        <li><a href="#contact">WhatsApp</a></li>
-        <li><a href="#contact">Live Chat</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#contact">Lal Kitab</a>
-      <ul class="dropdown-content">
-        <li><a href="#contact">Email Us</a></li>
-        <li><a href="#contact">WhatsApp</a></li>
-        <li><a href="#contact">Live Chat</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#contact">KP</a>
-      <ul class="dropdown-content">
-        <li><a href="#contact">Email Us</a></li>
-        <li><a href="#contact">WhatsApp</a></li>
-        <li><a href="#contact">Live Chat</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#contact">Compatibility</a>
-      <ul class="dropdown-content">
-        <li><a href="#contact">Email Us</a></li>
-        <li><a href="#contact">WhatsApp</a></li>
-        <li><a href="#contact">Live Chat</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#contact">Calculator</a>
-      <ul class="dropdown-content">
-        <li><a href="#contact">Email Us</a></li>
-        <li><a href="#contact">WhatsApp</a></li>
-        <li><a href="#contact">Live Chat</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#contact">Festival</a>
-      <ul class="dropdown-content">
-        <li><a href="#contact">Email Us</a></li>
-        <li><a href="#contact">WhatsApp</a></li>
-        <li><a href="#contact">Live Chat</a></li>
-      </ul>
-    </li>
-    <li class="dropdown">
-      <a href="#contact">Misc</a>
-      <ul class="dropdown-content">
-        <li><a href="#contact">Email Us</a></li>
-        <li><a href="#contact">WhatsApp</a></li>
-        <li><a href="#contact">Live Chat</a></li>
-      </ul>
-    </li>
-  </ul>
- 
-    </div>
+  
       
       <section class="horoscope-section">
   <h2>Get Your Personalized Horoscope</h2>
@@ -362,7 +172,7 @@
 
     
     // Mobile menu toggle
-     <script>
+     
     // Hamburger toggle
     document.getElementById('menu-toggle').addEventListener('click', () => {
       document.getElementById('menu').classList.toggle('hidden');
@@ -376,7 +186,15 @@
         parent.classList.toggle('open');
       });
     });
-  </script>
+
+    <!-- Toggle Logic -->
+  
+    function toggleMenu(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('hidden');
+    }
+  
+  
 
     // Save selected language in localStorage
     const languageSelect = document.getElementById('language-select');
