@@ -8,155 +8,88 @@
   <link rel="stylesheet" href="styles.css" />
   
 </head>
-  <!-- Top Menu -->
-  <nav class="bg-indigo-700 text-white px-4 py-2">
-    <div class="flex justify-between items-center">
-      <div class="text-lg font-semibold">🔯 AstroLokh</div>
-      <button class="md:hidden" onclick="toggleMenu('topMenu')">☰</button>
-    </div>
-    <ul id="topMenu" class="hidden md:flex flex-col md:flex-row md:space-x-6 mt-2 md:mt-0">
-      <li class="dropdown relative">
-        <a class="block py-1 md:py-2" href="#">Account</a>
-        <ul class="dropdown-menu absolute hidden bg-white text-black p-2 rounded shadow-md">
-          <li><a href="#" class="block px-2 py-1">Login</a></li>
-          <li><a href="#" class="block px-2 py-1">Register</a></li>
-        </ul>
-      </li>
-      <li><a class="block py-1 md:py-2" href="#">Language</a></li>
-      <li><a class="block py-1 md:py-2" href="#">Wallet</a></li>
-    </ul>
-  </nav>
-
-  <!-- Middle Menu -->
-  <nav class="bg-white shadow px-4 py-3">
-    <div class="flex justify-between items-center">
-      <div class="text-lg font-bold text-indigo-700">Menu</div>
-      <button class="md:hidden" onclick="toggleMenu('middleMenu')">☰</button>
-    </div>
-    <ul id="middleMenu" class="hidden md:flex flex-col md:flex-row md:space-x-6 mt-2 md:mt-0">
-      <li class="dropdown relative">
-        <a class="block py-1 md:py-2" href="#">Services</a>
-        <ul class="dropdown-menu absolute hidden bg-white p-2 rounded shadow-md z-10">
-          <li><a href="#" class="block px-2 py-1">Horoscope</a></li>
-          <li><a href="#" class="block px-2 py-1">Numerology</a></li>
-        </ul>
-      </li>
-      <li class="dropdown relative">
-        <a class="block py-1 md:py-2" href="#">Gemstones</a>
-        <ul class="dropdown-menu absolute hidden bg-white p-2 rounded shadow-md z-10">
-          <li><a href="#" class="block px-2 py-1">Ruby</a></li>
-          <li><a href="#" class="block px-2 py-1">Emerald</a></li>
-        </ul>
-      </li>
-      <li><a class="block py-1 md:py-2" href="#">Chat</a></li>
-    </ul>
-  </nav>
-
-  <!-- Bottom Menu -->
-  <nav class="bg-indigo-100 px-4 py-3">
-    <div class="flex justify-between items-center">
-      <div class="text-lg font-semibold text-indigo-800">Explore</div>
-      <button class="md:hidden" onclick="toggleMenu('bottomMenu')">☰</button>
-    </div>
-    <ul id="bottomMenu" class="hidden md:flex flex-col md:flex-row md:space-x-6 mt-2 md:mt-0">
-      <li class="dropdown relative">
-        <a class="block py-1 md:py-2" href="#">Reports</a>
-        <ul class="dropdown-menu absolute hidden bg-white p-2 rounded shadow-md z-10">
-          <li><a href="#" class="block px-2 py-1">Daily Prediction</a></li>
-          <li><a href="#" class="block px-2 py-1">Zodiac Finder</a></li>
-        </ul>
-      </li>
-      <li class="dropdown relative">
-        <a class="block py-1 md:py-2" href="#">Panchang</a>
-        <ul class="dropdown-menu absolute hidden bg-white p-2 rounded shadow-md z-10">
-          <li><a href="#" class="block px-2 py-1">Today</a></li>
-          <li><a href="#" class="block px-2 py-1">This Week</a></li>
-        </ul>
-      </li>
-      <li><a class="block py-1 md:py-2" href="#">Contact</a></li>
-    </ul>
-  </nav>
-
   
+    <header style="background-color:#0B4A6B; color: white;margin-top: 0px;padding-top: 0px;">
+    <div style="display:flex; justify-content:space-between; align-items:center ;flex-wrap:wrap;">
       
-      <section class="horoscope-section">
-  <h2>Get Your Personalized Horoscope</h2>
-  <p>Enter your birth details to receive daily insights tailored just for you.</p>
-  <form class="horoscope-form">
-    <div>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Your name" />
-    </div>
-    <div>
-      <label for="dob">Date of Birth</label>
-      <input type="date" id="dob" />
-    </div>
-    <div>
-      <label for="tob">Time of Birth</label>
-      <input type="time" id="tob" />
-    </div>
-    <div>
-      <label for="pob">Place of Birth</label>
-      <input type="text" id="pob" placeholder="City, State" />
-    </div>
-    <div class="full-width">
-      <button type="submit">Show My Horoscope</button>
-    </div>
-  </form>
-</section>
+      <!-- Logo & Title -->
+      <!-- <div style="display:flex; align-items:center;">
+        <img src="abc.jpeg" alt="Pharmacy Logo" style="height:200px; width:auto;align-self:centre;padding-bottom: 0px;">
+        <h1 style="font-size:24px; margin:0; color:#e1e1ff;">  Sumatidevi Tompe Institute of Pharmaceutical Science and Research (STIPSR)</h1>
+      </div> -->
+      <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: center; text-align: center; padding: 10px;">
+  <img src="abc.jpeg" alt="Pharmacy Logo" style="height: 100px; width: auto; margin-right: 0px;">
+  <h1 style="font-size: 20px; margin: 10px 0; color: #e1e1ff; max-width: 600px;">
+    Sumatidevi Tompe Institute of Pharmaceutical Science and Research (STIPSR)
+  </h1>
+</div>
 
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Your Future, Your Stars</h2>
-      <p>Get Personalized Predictions Based on Vedic Astrology</p>
-      <a href="#report" class="btn">Get Your Report</a>
+      <!-- Hamburger Button -->
+      <div onclick="toggleMenu()" style="font-size:28px; cursor:pointer; display:none;" id="menu-icon">
+        ☰
+      </div>
     </div>
-  </section>
 
-  <!-- Services Section -->
-  <section id="services" class="section">
-    <h2>Our Services</h2>
-    <div class="grid">
-      <div class="card">Horoscope</div>
-      <div class="card">Kundli Matching</div>
-      <div class="card">Numerology</div>
-      <div class="card">Palmistry</div>
-    </div>
-  </section>
+    <!-- Navigation -->
+    <nav>
+      <ul id="nav-links" style="list-style:none; padding:0; margin:0; display:flex; justify-content:center; flex-wrap:wrap;">
+        <li style="position:relative;"><a href="index.html" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Home</a></li>
 
-  <!-- Gemstones Section -->
-  <section id="gemstones" class="section">
-    <h2>Gemstones</h2>
-    <div class="grid">
-      <div class="card">Ruby</div>
-      <div class="card">Emerald</div>
-      <div class="card">Blue Sapphire</div>
-      <div class="card">Yellow Sapphire</div>
-    </div>
-  </section>
+        <li style="position:relative;">
+          <a href="#" style="color:white; text-decoration:none; padding:10px 15px; display:block;">About Us ▼</a>
+          <div style="display:none; position:absolute; background:white; z-index:999;" class="dropdown">
+            <a href="about.html" style="color:black; padding:10px; display:block; text-decoration:none;">About</a>
+            <a href="institute.html" style="color:black; padding:10px; display:block; text-decoration:none;">Institute</a>
+            <a href="vison.html" style="color:black; padding:10px; display:block; text-decoration:none;">Vision & Mission</a>
+            <a href="message.html" style="color:black; padding:10px; display:block; text-decoration:none;">Message</a>
+            
+            <a href="institute.html" style="color:black; padding:10px; display:block; text-decoration:none;">GB/CDC</a>
+            <a href="org.html" style="color:black; padding:10px; display:block; text-decoration:none;">Organogram</a>
+            <a href="infrastructure.html" style="color:black; padding:10px; display:block; text-decoration:none;">Infrastructure</a>
+          </div>
+        </li>
+         <li style="position:relative;">
+          <a href="#" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Affiliation ▼</a>
+          <div style="display:none; position:absolute; background:white; z-index:999;" class="dropdown">
+            <a href="about.html" style="color:black; padding:10px; display:block; text-decoration:none;">MSBTE</a>
+            <a href="institute.html" style="color:black; padding:10px; display:block; text-decoration:none;">GOVT OF MAH</a>
+            <a href="vison.html" style="color:black; padding:10px; display:block; text-decoration:none;">Aishe</a>
+            <a href="message.html" style="color:black; padding:10px; display:block; text-decoration:none;">ISO</a>
+          </div>
+        </li>
+        <li style="position:relative;">
+          <a href="#" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Admissions ▼</a>
+          <div style="display:none; position:absolute; background:white; z-index:999;" class="dropdown">
+            <a href="about.html" style="color:black; padding:10px; display:block; text-decoration:none;">Publication</a>
+            <a href="institute.html" style="color:black; padding:10px; display:block; text-decoration:none;">Patent</a>
+            <a href="vison.html" style="color:black; padding:10px; display:block; text-decoration:none;">Copywright</a>
+            
+          </div>
+        </li>
+       
 
-  <!-- Instant Report -->
-  <section id="report" class="section">
-    <h2>Instant Report</h2>
-    <form id="reportForm">
-      <input type="text" placeholder="Your Name" required />
-      <input type="date" required />
-      <button type="submit" class="btn">Generate Report</button>
-    </form>
-    <div id="reportResult"></div>
-  </section>
+        <li style="position:relative;">
+          <a href="#" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Courses ▼</a>
+          <div style="display:none; position:absolute; background:white; z-index:999;" class="dropdown">
+            <a href="bpharm.html" style="color:black; padding:10px; display:block; text-decoration:none;">D.Pharm</a>
+          </div>
+        </li>
 
-  <!-- Products Section -->
-  <section id="products" class="section">
-    <h2>Our Products</h2>
-    <div class="grid">
-      <div class="card">Yantra</div>
-      <div class="card">Rudraksha</div>
-      <div class="card">Puja Kits</div>
-      <div class="card">Astro Books</div>
-    </div>
-  </section>
+        <li><a href="admissions.html" style="color:white; text-decoration:none; padding:10px 15px; display:block;">IQAC</a></li>
+        <li><a href="events.html" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Events</a></li>
+        <li><a href="contact.html" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Alumini</a></li>
+         <li style="position:relative;">
+          <a href="#" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Student corner▼</a>
+          <div style="display:none; position:absolute; background:white; z-index:999;" class="dropdown">
+            <a href="bpharm.html" style="color:black; padding:10px; display:block; text-decoration:none;">Student activity</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
 
   <!-- Footer -->
   <footer class="footer">
