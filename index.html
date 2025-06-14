@@ -252,26 +252,61 @@
     </div>
 
     <!-- Astrology Magazine -->
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300">
-      <h2 class="text-2xl font-bold text-center text-pink-600 mb-6">Astrology Magazine</h2>
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-lg font-semibold text-gray-800">June 2025 Edition</h3>
-          <p class="text-sm text-gray-600">Monthly predictions, events, and astrology rituals.</p>
-          <a href="#" class="text-pink-600 text-sm hover:underline mt-1 inline-block">Read More →</a>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold text-gray-800">Saturn Retrograde Special</h3>
-          <p class="text-sm text-gray-600">Know its effects and how to prepare each zodiac.</p>
-          <a href="#" class="text-pink-600 text-sm hover:underline mt-1 inline-block">Explore →</a>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold text-gray-800">Marriage Muhurat 2025</h3>
-          <p class="text-sm text-gray-600">Best marriage dates based on Vedic astrology.</p>
-          <a href="#" class="text-pink-600 text-sm hover:underline mt-1 inline-block">Get Dates →</a>
-        </div>
+    <!-- Filterable Astrology Magazine Section -->
+<section class="bg-white p-6 rounded-xl shadow max-w-4xl mx-auto">
+  <h2 class="text-2xl font-bold text-center text-pink-600 mb-6">Astrology Magazine</h2>
+
+  <!-- Filter Dropdown -->
+  <div class="mb-6 text-center">
+    <label for="magazineFilter" class="block mb-2 text-sm font-medium text-gray-700">Choose a category:</label>
+    <select id="magazineFilter" class="border border-pink-300 text-pink-700 rounded px-4 py-2">
+      <option value="all">All</option>
+      <option value="hindi">Hindi</option>
+      <option value="english">English</option>
+      <option value="yearly">Yearly</option>
+    </select>
+  </div>
+
+  <!-- Magazine List -->
+  <div id="magazineList" class="space-y-5">
+    <!-- Hindi -->
+    <div class="magazine-item" data-category="hindi">
+      <div class="bg-pink-50 p-4 rounded hover:bg-pink-100 transition">
+        <h3 class="text-lg font-semibold text-gray-800">🔮 जून 2025 अंक</h3>
+        <p class="text-sm text-gray-600">मासिक राशिफल और अनुष्ठान।</p>
+        <a href="#" class="text-pink-600 text-sm hover:underline inline-block">और पढ़ें →</a>
       </div>
     </div>
+
+    <!-- English -->
+    <div class="magazine-item" data-category="english">
+      <div class="bg-pink-50 p-4 rounded hover:bg-pink-100 transition">
+        <h3 class="text-lg font-semibold text-gray-800">🔮 June 2025 Edition</h3>
+        <p class="text-sm text-gray-600">Monthly predictions and rituals.</p>
+        <a href="#" class="text-pink-600 text-sm hover:underline inline-block">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Yearly -->
+    <div class="magazine-item" data-category="yearly">
+      <div class="bg-pink-50 p-4 rounded hover:bg-pink-100 transition">
+        <h3 class="text-lg font-semibold text-gray-800">📅 Yearly Forecast 2025</h3>
+        <p class="text-sm text-gray-600">Annual predictions for all signs.</p>
+        <a href="#" class="text-pink-600 text-sm hover:underline inline-block">Download PDF →</a>
+      </div>
+    </div>
+
+    <!-- Another English -->
+    <div class="magazine-item" data-category="english">
+      <div class="bg-pink-50 p-4 rounded hover:bg-pink-100 transition">
+        <h3 class="text-lg font-semibold text-gray-800">🪐 Saturn Retrograde Special</h3>
+        <p class="text-sm text-gray-600">Understand Saturn's effects.</p>
+        <a href="#" class="text-pink-600 text-sm hover:underline inline-block">Explore →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   </div>
 </section>
