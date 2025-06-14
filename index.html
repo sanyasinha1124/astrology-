@@ -3,185 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AstroSage Clone</title>
-  
-  <link rel="stylesheet" href="styles.css" />
-  
+  <title>Astrology Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      z-index: 50;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
 </head>
-  
-    <header style="background-color:#0B4A6B; color: white;margin-top: 0px;padding-top: 0px;">
-    <div style="display:flex; justify-content:space-between; align-items:center ;flex-wrap:wrap;">
-      
-      <!-- Logo & Title -->
-      <!-- <div style="display:flex; align-items:center;">
-        <img src="abc.jpeg" alt="Pharmacy Logo" style="height:200px; width:auto;align-self:centre;padding-bottom: 0px;">
-        <h1 style="font-size:24px; margin:0; color:#e1e1ff;">  Sumatidevi Tompe Institute of Pharmaceutical Science and Research (STIPSR)</h1>
-      </div> -->
-      <div style="display: flex; align-items: center; flex-wrap: wrap; justify-content: center; text-align: center; padding: 10px;">
-  <img src="abc.jpeg" alt="Pharmacy Logo" style="height: 100px; width: auto; margin-right: 0px;">
-  <h1 style="font-size: 20px; margin: 10px 0; color: #e1e1ff; max-width: 600px;">
-    Sumatidevi Tompe Institute of Pharmaceutical Science and Research (STIPSR)
-  </h1>
-</div>
+<body class="bg-gray-50 text-gray-800">
 
-
-      <!-- Hamburger Button -->
-      <div onclick="toggleMenu()" style="font-size:28px; cursor:pointer; display:none;" id="menu-icon">
-        ☰
-      </div>
+  <!-- Top Menu -->
+  <div class="bg-indigo-100 text-sm px-4 py-2 flex justify-between items-center">
+    <div>
+      <select class="bg-white border border-gray-300 px-2 py-1 rounded">
+        <option>English</option>
+        <option>Hindi</option>
+      </select>
     </div>
+    <div class="space-x-4">
+      <a href="#" class="hover:text-indigo-600">Login</a>
+      <a href="#" class="hover:text-indigo-600">Cart (0)</a>
+    </div>
+  </div>
 
-    <!-- Navigation -->
-    <nav>
-      <ul id="nav-links" style="list-style:none; padding:0; margin:0; display:flex; justify-content:center; flex-wrap:wrap;">
-        <li style="position:relative;"><a href="index.html" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Home</a></li>
-
-        <li style="position:relative;">
-          <a href="#" style="color:white; text-decoration:none; padding:10px 15px; display:block;">About Us ▼</a>
-          <div style="display:none; position:absolute; background:white; z-index:999;" class="dropdown">
-            <a href="about.html" style="color:black; padding:10px; display:block; text-decoration:none;">About</a>
-            <a href="institute.html" style="color:black; padding:10px; display:block; text-decoration:none;">Institute</a>
-            <a href="vison.html" style="color:black; padding:10px; display:block; text-decoration:none;">Vision & Mission</a>
-            <a href="message.html" style="color:black; padding:10px; display:block; text-decoration:none;">Message</a>
-            
-            <a href="institute.html" style="color:black; padding:10px; display:block; text-decoration:none;">GB/CDC</a>
-            <a href="org.html" style="color:black; padding:10px; display:block; text-decoration:none;">Organogram</a>
-            <a href="infrastructure.html" style="color:black; padding:10px; display:block; text-decoration:none;">Infrastructure</a>
-          </div>
-        </li>
-         <li style="position:relative;">
-          <a href="#" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Affiliation ▼</a>
-          <div style="display:none; position:absolute; background:white; z-index:999;" class="dropdown">
-            <a href="about.html" style="color:black; padding:10px; display:block; text-decoration:none;">MSBTE</a>
-            <a href="institute.html" style="color:black; padding:10px; display:block; text-decoration:none;">GOVT OF MAH</a>
-            <a href="vison.html" style="color:black; padding:10px; display:block; text-decoration:none;">Aishe</a>
-            <a href="message.html" style="color:black; padding:10px; display:block; text-decoration:none;">ISO</a>
-          </div>
-        </li>
-        <li style="position:relative;">
-          <a href="#" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Admissions ▼</a>
-          <div style="display:none; position:absolute; background:white; z-index:999;" class="dropdown">
-            <a href="about.html" style="color:black; padding:10px; display:block; text-decoration:none;">Publication</a>
-            <a href="institute.html" style="color:black; padding:10px; display:block; text-decoration:none;">Patent</a>
-            <a href="vison.html" style="color:black; padding:10px; display:block; text-decoration:none;">Copywright</a>
-            
-          </div>
-        </li>
-       
-
-        <li style="position:relative;">
-          <a href="#" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Courses ▼</a>
-          <div style="display:none; position:absolute; background:white; z-index:999;" class="dropdown">
-            <a href="bpharm.html" style="color:black; padding:10px; display:block; text-decoration:none;">D.Pharm</a>
-          </div>
-        </li>
-
-        <li><a href="admissions.html" style="color:white; text-decoration:none; padding:10px 15px; display:block;">IQAC</a></li>
-        <li><a href="events.html" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Events</a></li>
-        <li><a href="contact.html" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Alumini</a></li>
-         <li style="position:relative;">
-          <a href="#" style="color:white; text-decoration:none; padding:10px 15px; display:block;">Student corner▼</a>
-          <div style="display:none; position:absolute; background:white; z-index:999;" class="dropdown">
-            <a href="bpharm.html" style="color:black; padding:10px; display:block; text-decoration:none;">Student activity</a>
-          </div>
-        </li>
-      </ul>
+  <!-- Middle Menu -->
+  <header class="bg-white shadow-md px-4 py-4 flex justify-between items-center">
+    <div class="text-2xl font-bold text-indigo-700">AstroVerse</div>
+    <!-- Hamburger Icon -->
+    <div class="lg:hidden block text-3xl cursor-pointer" onclick="toggleMenu()">☰</div>
+    <!-- Desktop Menu -->
+    <nav class="hidden lg:flex space-x-6 items-center">
+      <a href="#" class="hover:text-indigo-600">Home</a>
+      <a href="#" class="hover:text-indigo-600">About</a>
+      <a href="#" class="hover:text-indigo-600">Contact</a>
     </nav>
   </header>
 
+  <!-- Bottom Menu with Dropdown -->
+  <nav class="bg-indigo-600 text-white px-4 py-3">
+    <div class="hidden lg:flex space-x-8 items-center">
+      <div class="relative dropdown">
+        <button class="hover:text-yellow-300">Services</button>
+        <div class="dropdown-content">
+          <a href="#" class="block px-4 py-2 hover:bg-indigo-100 text-black">Horoscope</a>
+          <a href="#" class="block px-4 py-2 hover:bg-indigo-100 text-black">Kundli</a>
+          <a href="#" class="block px-4 py-2 hover:bg-indigo-100 text-black">Numerology</a>
+        </div>
+      </div>
+      <div class="relative dropdown">
+        <button class="hover:text-yellow-300">Products</button>
+        <div class="dropdown-content">
+          <a href="#" class="block px-4 py-2 hover:bg-indigo-100 text-black">Gemstones</a>
+          <a href="#" class="block px-4 py-2 hover:bg-indigo-100 text-black">Yantras</a>
+        </div>
+      </div>
+      <a href="#" class="hover:text-yellow-300">Panchang</a>
+      <a href="#" class="hover:text-yellow-300">Matchmaking</a>
+    </div>
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="lg:hidden hidden flex-col space-y-2 mt-3 bg-white text-black p-4 rounded shadow-md">
+      <a href="#" class="block hover:text-indigo-600">Home</a>
+      <a href="#" class="block hover:text-indigo-600">About</a>
+      <a href="#" class="block hover:text-indigo-600">Contact</a>
+      <hr>
+      <span class="font-semibold">Services</span>
+      <a href="#" class="block ml-4 hover:text-indigo-600">Horoscope</a>
+      <a href="#" class="block ml-4 hover:text-indigo-600">Kundli</a>
+      <a href="#" class="block ml-4 hover:text-indigo-600">Numerology</a>
+      <span class="font-semibold mt-2">Products</span>
+      <a href="#" class="block ml-4 hover:text-indigo-600">Gemstones</a>
+      <a href="#" class="block ml-4 hover:text-indigo-600">Yantras</a>
+      <a href="#" class="block hover:text-indigo-600 mt-2">Panchang</a>
+      <a href="#" class="block hover:text-indigo-600">Matchmaking</a>
+    </div>
+  </nav>
 
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 AstroSage Clone. All rights reserved.</p>
-  </footer>
+  <!-- Main Content Placeholder -->
+  <main class="px-4 py-10">
+    <h1 class="text-3xl font-bold text-center mb-6">Welcome to AstroVerse</h1>
+    <p class="max-w-2xl mx-auto text-center text-gray-700">
+      Get accurate astrology predictions, kundli matching, and personalized guidance from trusted astrologers.
+    </p>
+  </main>
 
   <script>
-    document.getElementById('reportForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('reportResult').innerHTML = '<p>Your astrology report has been generated!</p>';
-    });
-
-
-    
-    // Mobile menu toggle
-     
-    // Hamburger toggle
-    document.getElementById('menu-toggle').addEventListener('click', () => {
-      document.getElementById('menu').classList.toggle('hidden');
-    });
-
-    // Toggle dropdown on click (mobile)
-    document.querySelectorAll('.dropdown > a').forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.preventDefault();
-        const parent = item.parentElement;
-        parent.classList.toggle('open');
-      });
-    });
-
-    <!-- Toggle Logic -->
-  
-    function toggleMenu(id) {
-      const el = document.getElementById(id);
-      el.classList.toggle('hidden');
-    }
-  
-  
-
-    // Save selected language in localStorage
-    const languageSelect = document.getElementById('language-select');
-    languageSelect.value = localStorage.getItem('language') || 'en';
-    languageSelect.addEventListener('change', () => {
-      localStorage.setItem('language', languageSelect.value);
-    });
-
-    <!-- JavaScript for Toggle Menu and Dropdowns -->
-
-  
-    // Toggle for small screens
     function toggleMenu() {
-      var nav = document.getElementById("nav-links");
-      if (nav.style.display === "flex") {
-        nav.style.display = "none";
-      } else {
-        nav.style.display = "flex";
-        nav.style.flexDirection = "column";
-        nav.style.alignItems = "flex-start";
-      }
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
     }
-
-    // Show dropdowns on hover (only for desktop)
-    document.querySelectorAll("li").forEach(item => {
-      item.addEventListener("mouseenter", () => {
-        let dropdown = item.querySelector(".dropdown");
-        if (dropdown) dropdown.style.display = "block";
-      });
-      item.addEventListener("mouseleave", () => {
-        let dropdown = item.querySelector(".dropdown");
-        if (dropdown) dropdown.style.display = "none";
-      });
-    });
-
-    // Responsive hamburger icon display
-    function handleResize() {
-      const menuIcon = document.getElementById("menu-icon");
-      const nav = document.getElementById("nav-links");
-      if (window.innerWidth <= 768) {
-        menuIcon.style.display = "block";
-        nav.style.display = "none";
-      } else {
-        menuIcon.style.display = "none";
-        nav.style.display = "flex";
-        nav.style.flexDirection = "row";
-        nav.style.justifyContent = "center";
-      }
-    }
-
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("load", handleResize);
-  
-  
   </script>
 </body>
 </html>
