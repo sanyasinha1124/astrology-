@@ -5,19 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Astrology Website</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      z-index: 50;
-      background-color: white;
-      min-width: 160px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -38,9 +25,7 @@
   <!-- Middle Menu -->
   <header class="bg-white shadow-md px-4 py-4 flex justify-between items-center">
     <div class="text-2xl font-bold text-indigo-700">AstroVerse</div>
-    <!-- Hamburger Icon -->
     <div class="lg:hidden block text-3xl cursor-pointer" onclick="toggleMenu()">☰</div>
-    <!-- Desktop Menu -->
     <nav class="hidden lg:flex space-x-6 items-center">
       <a href="#" class="hover:text-indigo-600">Home</a>
       <a href="#" class="hover:text-indigo-600">About</a>
@@ -48,46 +33,51 @@
     </nav>
   </header>
 
-  <!-- Bottom Menu with Dropdown -->
-  <nav class="bg-indigo-600 text-white px-4 py-3">
+  <!-- Bottom Menu with Click Dropdown -->
+  <nav class="bg-indigo-600 text-white px-4 py-3 relative">
     <div class="hidden lg:flex space-x-8 items-center">
-      <div class="relative dropdown">
-        <button class="hover:text-yellow-300">Services</button>
-        <div class="dropdown-content">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100 text-black">Horoscope</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100 text-black">Kundli</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100 text-black">Numerology</a>
+      <div class="relative">
+        <button onclick="toggleDropdown('servicesDropdown')" class="hover:text-yellow-300">Services</button>
+        <div id="servicesDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
+          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Horoscope</a>
+          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Kundli</a>
+          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Numerology</a>
         </div>
       </div>
-      <div class="relative dropdown">
-        <button class="hover:text-yellow-300">Products</button>
-        <div class="dropdown-content">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100 text-black">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100 text-black">Yantras</a>
+      <div class="relative">
+        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">Products</button>
+        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
+          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
+          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
         </div>
       </div>
       <a href="#" class="hover:text-yellow-300">Panchang</a>
       <a href="#" class="hover:text-yellow-300">Matchmaking</a>
     </div>
+
     <!-- Mobile Dropdown -->
     <div id="mobileMenu" class="lg:hidden hidden flex-col space-y-2 mt-3 bg-white text-black p-4 rounded shadow-md">
       <a href="#" class="block hover:text-indigo-600">Home</a>
       <a href="#" class="block hover:text-indigo-600">About</a>
       <a href="#" class="block hover:text-indigo-600">Contact</a>
       <hr>
-      <span class="font-semibold">Services</span>
-      <a href="#" class="block ml-4 hover:text-indigo-600">Horoscope</a>
-      <a href="#" class="block ml-4 hover:text-indigo-600">Kundli</a>
-      <a href="#" class="block ml-4 hover:text-indigo-600">Numerology</a>
-      <span class="font-semibold mt-2">Products</span>
-      <a href="#" class="block ml-4 hover:text-indigo-600">Gemstones</a>
-      <a href="#" class="block ml-4 hover:text-indigo-600">Yantras</a>
+      <button onclick="toggleDropdown('mobileServices')" class="font-semibold">Services ▼</button>
+      <div id="mobileServices" class="hidden ml-4">
+        <a href="#" class="block hover:text-indigo-600">Horoscope</a>
+        <a href="#" class="block hover:text-indigo-600">Kundli</a>
+        <a href="#" class="block hover:text-indigo-600">Numerology</a>
+      </div>
+      <button onclick="toggleDropdown('mobileProducts')" class="font-semibold mt-2">Products ▼</button>
+      <div id="mobileProducts" class="hidden ml-4">
+        <a href="#" class="block hover:text-indigo-600">Gemstones</a>
+        <a href="#" class="block hover:text-indigo-600">Yantras</a>
+      </div>
       <a href="#" class="block hover:text-indigo-600 mt-2">Panchang</a>
       <a href="#" class="block hover:text-indigo-600">Matchmaking</a>
     </div>
   </nav>
 
-  <!-- Main Content Placeholder -->
+  <!-- Main Content -->
   <main class="px-4 py-10">
     <h1 class="text-3xl font-bold text-center mb-6">Welcome to AstroVerse</h1>
     <p class="max-w-2xl mx-auto text-center text-gray-700">
@@ -95,11 +85,28 @@
     </p>
   </main>
 
+  <!-- JavaScript -->
   <script>
     function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
+      document.getElementById('mobileMenu').classList.toggle('hidden');
     }
+
+    function toggleDropdown(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('hidden');
+    }
+
+    // Optional: Close dropdowns if clicked outside
+    window.addEventListener('click', function(e) {
+      const dropdowns = ['servicesDropdown', 'productsDropdown', 'mobileServices', 'mobileProducts'];
+      dropdowns.forEach(id => {
+        const button = document.querySelector(`[onclick="toggleDropdown('${id}')"]`);
+        const dropdown = document.getElementById(id);
+        if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+          dropdown.classList.add('hidden');
+        }
+      });
+    });
   </script>
 </body>
 </html>
