@@ -76,159 +76,52 @@
   
 
   <!-- Bottom Menu with Click Dropdown -->
-<!-- Vertical Click-Only Dropdown Navigation -->
-<nav class="bg-indigo-700 text-white p-4">
-  <div class="max-w-7xl mx-auto flex justify-between items-center">
-    <div class="text-2xl font-bold">🔯 AstroMenu</div>
-    <button class="lg:hidden text-3xl" onclick="toggleMobileMenu()">☰</button>
+  <!-- Vertical Menu Container -->
+<div class="hidden lg:block mt-4 space-y-3 px-4" id="desktopMenu">
+
+  <!-- Menu Item Template -->
+  <div class="relative">
+    <button onclick="toggleDropdown('dropdownHome')" class="w-full text-left text-lg font-semibold hover:text-yellow-300">
+      Home
+    </button>
+    <div id="dropdownHome" class="hidden mt-1 ml-4 space-y-1">
+      <a href="#" class="block hover:text-yellow-200">Free Kundli</a>
+      <a href="#" class="block hover:text-yellow-200">Horoscope Matching</a>
+      <a href="#" class="block hover:text-yellow-200">Horoscope 2025</a>
+    </div>
   </div>
 
-  <!-- Desktop Dropdowns (Click to expand vertically) -->
-  <div class="hidden lg:block mt-4 space-y-2" id="desktopMenu">
-    <div class="relative">
-      <button onclick="toggleDropdown('dropdown1')" class="w-full text-left font-semibold hover:text-yellow-300">Home</button>
-      <div id="dropdown1" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Free Kundli</a>
-        <a href="#" class="block hover:text-yellow-200">Horoscope matching</a>
-        <a href="#" class="block hover:text-yellow-200">Horoscope 2025</a>
-        <a href="#" class="block hover:text-yellow-200">Todays Horoscope</a>
-         <a href="#" class="block hover:text-yellow-200">RahuKaal Today</a>
-        <a href="#" class="block hover:text-yellow-200">Moon Signs</a>
-        <a href="#" class="block hover:text-yellow-200">Astro Shop</a>
-      </div>
-    </div>
-
-    <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">Horoscope</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block hover:text-yellow-200">Tomorrow's Horoscope</a>
-        <a href="#" class="block hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block hover:text-yellow-200">Zodiac Sign</a>
-         <a href="#" class="block hover:text-yellow-200">Celebrity Horoscope</a>
-        <a href="#" class="block hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block hover:text-yellow-200">Chinese Horoscope</a>
-        
-        <a href="#" class="block hover:text-yellow-200">Matrimony</a>
-      </div>
-    </div>
-
-        <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">Astrology</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Astrology Cloud</a>
-        <a href="#" class="block hover:text-yellow-200">Free Astrology Software</a>
-        <a href="#" class="block hover:text-yellow-200">Muhrat</a>
-         <a href="#" class="block hover:text-yellow-200">Learn Astrology</a>
-        <a href="#" class="block hover:text-yellow-200">Planets</a>
-        <a href="#" class="block hover:text-yellow-200">Video Channel</a>
-         <a href="#" class="block hover:text-yellow-200">Magazine</a>
-        <a href="#" class="block hover:text-yellow-200">Kundli Database</a>
-        <a href="#" class="block hover:text-yellow-200">Occult Directory</a>
-         <a href="#" class="block hover:text-yellow-200">Baby names</a>
-        <a href="#" class="block hover:text-yellow-200">Atlas</a>
-       
-      </div>
-    </div>
-
-        <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">2025</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Horoscope 2025</a>
-        <a href="#" class="block hover:text-yellow-200">Holiday 2025</a>
-        <a href="#" class="block hover:text-yellow-200">Calendar 2025</a>
-         <a href="#" class="block hover:text-yellow-200">Chinese Horoscope 2025</a>
-        <a href="#" class="block hover:text-yellow-200">Shubh Muhrat 2025</a>
-        <a href="#" class="block hover:text-yellow-200">Lal Kitab 2025</a>
-         <a href="#" class="block hover:text-yellow-200">Tarot Reading 2025</a>
-
-      </div>
-    </div>
-
-        <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">Occult</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Diwali</a>
-        <a href="#" class="block hover:text-yellow-200">Holi</a>
-        <a href="#" class="block hover:text-yellow-200">Navratri</a>
-      </div>
-    </div>
-
-        <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">Free Report</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Diwali</a>
-        <a href="#" class="block hover:text-yellow-200">Holi</a>
-        <a href="#" class="block hover:text-yellow-200">Navratri</a>
-      </div>
-    </div>
-     <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">Healing</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Diwali</a>
-        <a href="#" class="block hover:text-yellow-200">Holi</a>
-        <a href="#" class="block hover:text-yellow-200">Navratri</a>
-      </div>
-    </div>
-     <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">Panchang</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Diwali</a>
-        <a href="#" class="block hover:text-yellow-200">Holi</a>
-        <a href="#" class="block hover:text-yellow-200">Navratri</a>
-      </div>
-    </div>
-     <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">Lal Kitab</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Diwali</a>
-        <a href="#" class="block hover:text-yellow-200">Holi</a>
-        <a href="#" class="block hover:text-yellow-200">Navratri</a>
-      </div>
-    </div>
-     <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">KP</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Diwali</a>
-        <a href="#" class="block hover:text-yellow-200">Holi</a>
-        <a href="#" class="block hover:text-yellow-200">Navratri</a>
-      </div>
-    </div>
-     <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">Compatibility</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Diwali</a>
-        <a href="#" class="block hover:text-yellow-200">Holi</a>
-        <a href="#" class="block hover:text-yellow-200">Navratri</a>
-      </div>
-    </div>
-     <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">Calculator</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Diwali</a>
-        <a href="#" class="block hover:text-yellow-200">Holi</a>
-        <a href="#" class="block hover:text-yellow-200">Navratri</a>
-      </div>
-    </div>
-     <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">Festivals</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Diwali</a>
-        <a href="#" class="block hover:text-yellow-200">Holi</a>
-        <a href="#" class="block hover:text-yellow-200">Navratri</a>
-      </div>
-    </div>
-     <div class="relative">
-      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">Misc</button>
-      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
-        <a href="#" class="block hover:text-yellow-200">Diwali</a>
-        <a href="#" class="block hover:text-yellow-200">Holi</a>
-        <a href="#" class="block hover:text-yellow-200">Navratri</a>
-      </div>
+  <div class="relative">
+    <button onclick="toggleDropdown('dropdownHoroscope')" class="w-full text-left text-lg font-semibold hover:text-yellow-300">
+      Horoscope
+    </button>
+    <div id="dropdownHoroscope" class="hidden mt-1 ml-4 space-y-1">
+      <a href="#" class="block hover:text-yellow-200">Today</a>
+      <a href="#" class="block hover:text-yellow-200">Weekly</a>
+      <a href="#" class="block hover:text-yellow-200">Monthly</a>
     </div>
   </div>
+
+  <div class="relative">
+    <button onclick="toggleDropdown('dropdownAstrology')" class="w-full text-left text-lg font-semibold hover:text-yellow-300">
+      Astrology
+    </button>
+    <div id="dropdownAstrology" class="hidden mt-1 ml-4 space-y-1">
+      <a href="#" class="block hover:text-yellow-200">Learn Astrology</a>
+      <a href="#" class="block hover:text-yellow-200">Muhrat</a>
+    </div>
+  </div>
+
+  <!-- Add more sections similarly -->
+</div>
+
+  <script>
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    dropdown.classList.toggle('hidden');
+  }
+</script>
+
 
   <!-- Mobile Accordion Dropdowns -->
   <div class="lg:hidden mt-4 hidden" id="mobileMenu">
