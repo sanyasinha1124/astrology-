@@ -488,34 +488,54 @@
 </section>
 
   
-<section class="max-w-5xl mx-auto px-4 py-10 bg-white rounded-xl shadow-md">
+
+ <section class="max-w-5xl mx-auto px-4 py-10 bg-white rounded-xl shadow-md">
   <h2 class="text-3xl font-bold text-center text-purple-700 mb-6">🔮 Your Horoscope</h2>
+
+  <!-- Choose Rashifal Dropdown -->
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+    <label for="rashi" class="text-lg font-medium text-purple-700">Choose Rashifal:</label>
+    <select id="rashi" class="border border-purple-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400">
+      <option value="aries">Aries (Mesh)</option>
+      <option value="taurus">Taurus (Vrishabha)</option>
+      <option value="gemini">Gemini (Mithun)</option>
+      <option value="cancer">Cancer (Karka)</option>
+      <option value="leo">Leo (Simha)</option>
+      <option value="virgo">Virgo (Kanya)</option>
+      <option value="libra">Libra (Tula)</option>
+      <option value="scorpio">Scorpio (Vrishchik)</option>
+      <option value="sagittarius">Sagittarius (Dhanu)</option>
+      <option value="capricorn">Capricorn (Makar)</option>
+      <option value="aquarius">Aquarius (Kumbha)</option>
+      <option value="pisces">Pisces (Meen)</option>
+    </select>
+  </div>
 
   <!-- Filter Tabs -->
   <div class="flex flex-wrap justify-center gap-3 mb-6">
-    <button onclick="showHoroscope('daily', this)" class="tab-btn bg-purple-100 text-purple-800 px-4 py-2 rounded-md hover:bg-purple-200">Daily</button>
-    <button onclick="showHoroscope('weekly', this)" class="tab-btn bg-purple-100 text-purple-800 px-4 py-2 rounded-md hover:bg-purple-200">Weekly</button>
-    <button onclick="showHoroscope('monthly', this)" class="tab-btn bg-purple-100 text-purple-800 px-4 py-2 rounded-md hover:bg-purple-200">Monthly</button>
-    <button onclick="showHoroscope('yearly', this)" class="tab-btn bg-purple-100 text-purple-800 px-4 py-2 rounded-md hover:bg-purple-200">Yearly</button>
+    <button onclick="showHoroscope('daily', this)" class="tab-btn bg-purple-100 text-purple-800 px-4 py-2 rounded hover:bg-purple-200">Daily</button>
+    <button onclick="showHoroscope('weekly', this)" class="tab-btn bg-purple-100 text-purple-800 px-4 py-2 rounded hover:bg-purple-200">Weekly</button>
+    <button onclick="showHoroscope('monthly', this)" class="tab-btn bg-purple-100 text-purple-800 px-4 py-2 rounded hover:bg-purple-200">Monthly</button>
+    <button onclick="showHoroscope('yearly', this)" class="tab-btn bg-purple-100 text-purple-800 px-4 py-2 rounded hover:bg-purple-200">Yearly</button>
   </div>
 
   <!-- Horoscope Panels -->
   <div class="space-y-4 text-center sm:text-left">
     <div id="daily" class="horoscope-panel block">
       <h3 class="text-xl font-semibold text-purple-600 mb-1">Daily Horoscope</h3>
-      <p class="text-gray-700">Today is a great day to focus on small wins. Avoid overcommitting.</p>
+      <p class="text-gray-700">Today brings clarity in decision-making. Avoid rushing important matters.</p>
     </div>
     <div id="weekly" class="horoscope-panel hidden">
       <h3 class="text-xl font-semibold text-purple-600 mb-1">Weekly Horoscope</h3>
-      <p class="text-gray-700">This week brings balance and perspective. Prioritize communication and rest.</p>
+      <p class="text-gray-700">This week may bring opportunities in career. Avoid financial risks mid-week.</p>
     </div>
     <div id="monthly" class="horoscope-panel hidden">
       <h3 class="text-xl font-semibold text-purple-600 mb-1">Monthly Horoscope</h3>
-      <p class="text-gray-700">This month is all about financial planning and emotional clarity.</p>
+      <p class="text-gray-700">Focus on family and health. Positive growth in long-term investments.</p>
     </div>
     <div id="yearly" class="horoscope-panel hidden">
       <h3 class="text-xl font-semibold text-purple-600 mb-1">Yearly Horoscope</h3>
-      <p class="text-gray-700">2025 will open major doors for growth and transformation. Embrace change wisely.</p>
+      <p class="text-gray-700">2025 brings transformation. Embrace change and commit to personal goals.</p>
     </div>
   </div>
 </section>
@@ -584,6 +604,16 @@
         }
       });
     });
+
+    
+  function showHoroscope(id, btn) {
+    document.querySelectorAll('.horoscope-panel').forEach(panel => panel.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+    document.querySelectorAll('.tab-btn').forEach(button => button.classList.remove('bg-purple-300'));
+    btn.classList.add('bg-purple-300');
+  }
+
+
   </script>
 </body>
 </html>
