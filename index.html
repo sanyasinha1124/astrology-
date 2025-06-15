@@ -76,106 +76,67 @@
   
 
   <!-- Bottom Menu with Click Dropdown -->
-<!-- Bottom Menu -->
-<nav class="bg-indigo-600 text-white px-4 py-3 relative">
-  <div class="flex justify-between items-center lg:hidden">
-    <div class="text-xl font-bold">Astro Menu</div>
-    <button onclick="toggleBottomMenu()" class="text-3xl">☰</button>
+<!-- Vertical Click-Only Dropdown Navigation -->
+<nav class="bg-indigo-700 text-white p-4">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="text-2xl font-bold">🔯 AstroMenu</div>
+    <button class="lg:hidden text-3xl" onclick="toggleMobileMenu()">☰</button>
   </div>
 
-  <!-- Hamburger Content -->
-  <div id="bottomMenuContent" class="hidden lg:flex flex-wrap gap-4 items-center justify-start mt-2 lg:mt-0">
-    <!-- Example Dropdown Item -->
+  <!-- Desktop Dropdowns (Click to expand vertically) -->
+  <div class="hidden lg:block mt-4 space-y-2" id="desktopMenu">
     <div class="relative">
-      <button onclick="toggleDropdown('homeDropdown')" class="hover:text-yellow-300">Home</button>
-      <div id="homeDropdown" class="dropdown-content hidden">
-        <a href="#">Horoscope</a>
-        <a href="#">Kundli</a>
-        <a href="#">Numerology</a>
+      <button onclick="toggleDropdown('dropdown1')" class="w-full text-left font-semibold hover:text-yellow-300">Horoscope</button>
+      <div id="dropdown1" class="hidden pl-4 mt-2 space-y-1">
+        <a href="#" class="block hover:text-yellow-200">Daily</a>
+        <a href="#" class="block hover:text-yellow-200">Weekly</a>
+        <a href="#" class="block hover:text-yellow-200">Monthly</a>
+        <a href="#" class="block hover:text-yellow-200">Yearly</a>
       </div>
     </div>
 
     <div class="relative">
-      <button onclick="toggleDropdown('horoscopeDropdown')" class="hover:text-yellow-300">Horoscope</button>
-      <div id="horoscopeDropdown" class="dropdown-content hidden">
-        <a href="#">Daily</a>
-        <a href="#">Weekly</a>
-        <a href="#">Monthly</a>
+      <button onclick="toggleDropdown('dropdown2')" class="w-full text-left font-semibold hover:text-yellow-300">Festivals</button>
+      <div id="dropdown2" class="hidden pl-4 mt-2 space-y-1">
+        <a href="#" class="block hover:text-yellow-200">Diwali</a>
+        <a href="#" class="block hover:text-yellow-200">Holi</a>
+        <a href="#" class="block hover:text-yellow-200">Navratri</a>
       </div>
     </div>
+  </div>
 
-    <div class="relative">
-      <button onclick="toggleDropdown('occultDropdown')" class="hover:text-yellow-300">Occult</button>
-      <div id="occultDropdown" class="dropdown-content hidden">
-        <a href="#">Vastu</a>
-        <a href="#">Palmistry</a>
+  <!-- Mobile Accordion Dropdowns -->
+  <div class="lg:hidden mt-4 hidden" id="mobileMenu">
+    <details class="mb-2 bg-indigo-600 rounded">
+      <summary class="py-2 px-4 font-semibold cursor-pointer">Horoscope</summary>
+      <div class="pl-4 pb-2">
+        <a href="#" class="block py-1 hover:text-yellow-200">Daily</a>
+        <a href="#" class="block py-1 hover:text-yellow-200">Weekly</a>
+        <a href="#" class="block py-1 hover:text-yellow-200">Monthly</a>
+        <a href="#" class="block py-1 hover:text-yellow-200">Yearly</a>
       </div>
-    </div>
-
-    <div class="relative">
-      <button onclick="toggleDropdown('2025Dropdown')" class="hover:text-yellow-300">2025</button>
-      <div id="2025Dropdown" class="dropdown-content hidden">
-        <a href="#">Annual Forecast</a>
-        <a href="#">Love Prediction</a>
+    </details>
+    <details class="mb-2 bg-indigo-600 rounded">
+      <summary class="py-2 px-4 font-semibold cursor-pointer">Festivals</summary>
+      <div class="pl-4 pb-2">
+        <a href="#" class="block py-1 hover:text-yellow-200">Diwali</a>
+        <a href="#" class="block py-1 hover:text-yellow-200">Holi</a>
+        <a href="#" class="block py-1 hover:text-yellow-200">Navratri</a>
       </div>
-    </div>
-
-    <div class="relative">
-      <button onclick="toggleDropdown('healingDropdown')" class="hover:text-yellow-300">Healing</button>
-      <div id="healingDropdown" class="dropdown-content hidden">
-        <a href="#">Reiki</a>
-        <a href="#">Crystal Therapy</a>
-      </div>
-    </div>
-    
-    <div class="relative">
-      <button onclick="toggleDropdown('calculatorDropdown')" class="hover:text-yellow-300">Calculator</button>
-      <div id="calculatorDropdown" class="dropdown-content hidden">
-        <a href="#">Love Calc</a>
-        <a href="#">Lucky Number</a>
-      </div>
-    </div>
+    </details>
   </div>
 </nav>
 
-<!-- Tailwind CSS dropdown style -->
-<style>
-  .dropdown-content {
-    @apply absolute bg-white text-black mt-2 rounded shadow-lg min-w-[160px] z-50;
-  }
-
-  .dropdown-content a {
-    @apply block px-4 py-2 hover:bg-indigo-100;
-  }
-</style>
-
-<!-- JavaScript -->
-<script>
+  <script>
   function toggleDropdown(id) {
-    const dropdowns = document.querySelectorAll('.dropdown-content');
-    dropdowns.forEach(drop => {
-      if (drop.id !== id) drop.classList.add('hidden');
-    });
-    const el = document.getElementById(id);
-    el.classList.toggle('hidden');
+    const dropdown = document.getElementById(id);
+    dropdown.classList.toggle('hidden');
   }
 
-  function toggleBottomMenu() {
-    const menu = document.getElementById('bottomMenuContent');
-    menu.classList.toggle('hidden');
+  function toggleMobileMenu() {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
   }
-
-  // Close dropdowns if clicked outside
-  window.addEventListener('click', function(e) {
-    if (!e.target.closest('.relative')) {
-      document.querySelectorAll('.dropdown-content').forEach(d => d.classList.add('hidden'));
-    }
-  });
 </script>
-
-
-   
- 
 
 
   <!-- Main Content -->
