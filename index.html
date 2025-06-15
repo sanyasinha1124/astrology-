@@ -76,325 +76,115 @@
   
 
   <!-- Bottom Menu with Click Dropdown -->
- 
-<!-- Horizontal Menu Bar -->
-<div class="hidden lg:flex justify-start space-x-8 px-6 py-4 bg-white" id="desktopMenu">
-
-  <!-- Home Dropdown -->
-  <div class="relative">
-    <button onclick="toggleDropdown('dropdownHome')" class="font-semibold hover:text-yellow-300">
-      Home
-    </button>
-    <div id="dropdownHome" class="hidden absolute bg-white mt-2 shadow-lg rounded-md space-y-1 p-2 z-50">
-      <a href="#" class="block hover:text-yellow-200">Free Kundli</a>
-      <a href="#" class="block hover:text-yellow-200">Horoscope Matching</a>
-      <a href="#" class="block hover:text-yellow-200">Horoscope 2025</a>
-    </div>
-  </div>
-
-  <!-- Horoscope Dropdown -->
-  <div class="relative">
-    <button onclick="toggleDropdown('dropdownHoroscope')" class="font-semibold hover:text-yellow-300">
-      Horoscope
-    </button>
-    <div id="dropdownHoroscope" class="hidden absolute bg-white mt-2 shadow-lg rounded-md space-y-1 p-2 z-50">
-      <a href="#" class="block hover:text-yellow-200">Today</a>
-      <a href="#" class="block hover:text-yellow-200">Weekly</a>
-      <a href="#" class="block hover:text-yellow-200">Monthly</a>
-    </div>
-  </div>
-
-  <!-- Astrology Dropdown -->
-  <div class="relative">
-    <button onclick="toggleDropdown('dropdownAstrology')" class="font-semibold hover:text-yellow-300">
-      Astrology
-    </button>
-    <div id="dropdownAstrology" class="hidden absolute bg-white mt-2 shadow-lg rounded-md space-y-1 p-2 z-50">
-      <a href="#" class="block hover:text-yellow-200">Learn Astrology</a>
-      <a href="#" class="block hover:text-yellow-200">Muhrat</a>
-    </div>
-  </div>
-
-  <!-- Add more menu items similarly -->
-
-</div>
-
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Astrology Website Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-  function toggleDropdown(id) {
-    const dropdown = document.getElementById(id);
-
-    // Close all other open dropdowns
-    document.querySelectorAll('[id^="dropdown"]').forEach(d => {
-      if (d.id !== id) d.classList.add('hidden');
-    });
-
-    // Toggle the clicked one
-    dropdown.classList.toggle('hidden');
-  }
-
-  // Close dropdowns when clicking outside
-  document.addEventListener('click', function (event) {
-    const isClickInside = event.target.closest('.relative');
-    if (!isClickInside) {
-      document.querySelectorAll('[id^="dropdown"]').forEach(d => d.classList.add('hidden'));
+    // Dropdown toggle logic
+    function toggleDropdown(id) {
+      document.querySelectorAll('.dropdown').forEach(el => {
+        if (el.id !== id) el.classList.add('hidden');
+      });
+      document.getElementById(id).classList.toggle('hidden');
     }
-  });
-</script>
 
+    // Hamburger toggle
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+  </script>
+</head>
+<body class="bg-gray-100">
 
-  <!-- Mobile Accordion Dropdowns -->
-  <div class="lg:hidden mt-4 hidden" id="mobileMenu">
-    <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Horoscope</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Free Kundli</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Horoscope Matching</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Horoscope 2025</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Todays Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Rahu kaal Today</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Hindi kundli</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">HMoon Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Astro Shop</a>
+<!-- Navbar -->
+<nav class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="text-2xl font-bold text-indigo-600">AstroGuru</div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-6 items-center">
+        <div class="relative">
+          <button onclick="toggleDropdown('services-dropdown')" class="hover:text-indigo-600 font-medium">Services</button>
+          <div id="services-dropdown" class="dropdown absolute top-full mt-2 w-40 bg-white shadow-lg rounded hidden z-10">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Kundli</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Matchmaking</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Consultation</a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <button onclick="toggleDropdown('gemstone-dropdown')" class="hover:text-indigo-600 font-medium">Gemstones</button>
+          <div id="gemstone-dropdown" class="dropdown absolute top-full mt-2 w-40 bg-white shadow-lg rounded hidden z-10">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Ruby</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Emerald</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Blue Sapphire</a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <button onclick="toggleDropdown('report-dropdown')" class="hover:text-indigo-600 font-medium">Reports</button>
+          <div id="report-dropdown" class="dropdown absolute top-full mt-2 w-40 bg-white shadow-lg rounded hidden z-10">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Instant Report</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Career Report</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Love Report</a>
+          </div>
+        </div>
+
+        <a href="#" class="hover:text-indigo-600 font-medium">Contact</a>
+        <a href="#" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">Login</a>
       </div>
-    </details>
-    <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Horoscope</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
+
+      <!-- Hamburger -->
+      <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-indigo-600">&#9776;</button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+    <div>
+      <button onclick="toggleDropdown('services-dropdown-m')" class="w-full text-left py-2 font-medium">Services ▼</button>
+      <div id="services-dropdown-m" class="dropdown hidden ml-4 space-y-1">
+        <a href="#" class="block py-1 text-sm">Kundli</a>
+        <a href="#" class="block py-1 text-sm">Matchmaking</a>
+        <a href="#" class="block py-1 text-sm">Consultation</a>
       </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Astrology</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
+    </div>
+
+    <div>
+      <button onclick="toggleDropdown('gemstone-dropdown-m')" class="w-full text-left py-2 font-medium">Gemstones ▼</button>
+      <div id="gemstone-dropdown-m" class="dropdown hidden ml-4 space-y-1">
+        <a href="#" class="block py-1 text-sm">Ruby</a>
+        <a href="#" class="block py-1 text-sm">Emerald</a>
+        <a href="#" class="block py-1 text-sm">Blue Sapphire</a>
       </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">2025</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
+    </div>
+
+    <div>
+      <button onclick="toggleDropdown('report-dropdown-m')" class="w-full text-left py-2 font-medium">Reports ▼</button>
+      <div id="report-dropdown-m" class="dropdown hidden ml-4 space-y-1">
+        <a href="#" class="block py-1 text-sm">Instant Report</a>
+        <a href="#" class="block py-1 text-sm">Career Report</a>
+        <a href="#" class="block py-1 text-sm">Love Report</a>
       </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Occult</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
-      </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Free Report</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
-      </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Healing</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
-      </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Panchang</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
-      </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Panchang</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
-      </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Lal Kitab</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
-      </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">KP</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
-      </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Compatibility</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
-      </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Calculators</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
-      </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Festivals</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
-      </div>
-    </details>
-     <details class="mb-2 bg-indigo-600 rounded">
-      <summary class="py-2 px-4 font-semibold cursor-pointer">Misc</summary>
-      <div class="pl-4 pb-2">
-        <a href="#" class="block py-1 hover:text-yellow-200">Today Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Tommorrow Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Weekly Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Weekly Love</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Monthly Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Zodiac Signs</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Celebrity Horoscope</a>
-         <a href="#" class="block py-1 hover:text-yellow-200">Love Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Chinese Horoscope</a>
-        <a href="#" class="block py-1 hover:text-yellow-200">Matrimony</a>
-    
-      </div>
-    </details>
+    </div>
+
+    <a href="#" class="block py-2">Contact</a>
+    <a href="#" class="block py-2 text-white bg-indigo-600 text-center rounded">Login</a>
   </div>
 </nav>
 
-  <script>
-  function toggleDropdown(id) {
-    const dropdown = document.getElementById(id);
-    dropdown.classList.toggle('hidden');
-  }
+</body>
+</html>
 
-  function toggleMobileMenu() {
-    document.getElementById('mobileMenu').classList.toggle('hidden');
-  }
-</script>
 
+
+ 
 
   <!-- Main Content -->
   <main class="px-4 py-10">
