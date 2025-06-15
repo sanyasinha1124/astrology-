@@ -76,11 +76,16 @@
   
 
   <!-- Bottom Menu with Click Dropdown -->
- <!-- Bottom Menu with Click Dropdown -->
-<nav class="bg-indigo-600 text-white px-4 py-3 overflow-x-auto">
-  <div class="flex flex-wrap gap-4 items-center justify-start">
-    
-    <!-- Reusable Menu Button -->
+<!-- Bottom Menu -->
+<nav class="bg-indigo-600 text-white px-4 py-3 relative">
+  <div class="flex justify-between items-center lg:hidden">
+    <div class="text-xl font-bold">Astro Menu</div>
+    <button onclick="toggleBottomMenu()" class="text-3xl">☰</button>
+  </div>
+
+  <!-- Hamburger Content -->
+  <div id="bottomMenuContent" class="hidden lg:flex flex-wrap gap-4 items-center justify-start mt-2 lg:mt-0">
+    <!-- Example Dropdown Item -->
     <div class="relative">
       <button onclick="toggleDropdown('homeDropdown')" class="hover:text-yellow-300">Home</button>
       <div id="homeDropdown" class="dropdown-content hidden">
@@ -93,110 +98,47 @@
     <div class="relative">
       <button onclick="toggleDropdown('horoscopeDropdown')" class="hover:text-yellow-300">Horoscope</button>
       <div id="horoscopeDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
-      </div>
-    </div>
-
-    <div class="relative">
-      <button onclick="toggleDropdown('astrologyDropdown')" class="hover:text-yellow-300">Astrology</button>
-      <div id="astrologyDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
-      </div>
-    </div>
-
-    <div class="relative">
-      <button onclick="toggleDropdown('yearDropdown')" class="hover:text-yellow-300">2025</button>
-      <div id="yearDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
+        <a href="#">Daily</a>
+        <a href="#">Weekly</a>
+        <a href="#">Monthly</a>
       </div>
     </div>
 
     <div class="relative">
       <button onclick="toggleDropdown('occultDropdown')" class="hover:text-yellow-300">Occult</button>
       <div id="occultDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
+        <a href="#">Vastu</a>
+        <a href="#">Palmistry</a>
       </div>
     </div>
 
     <div class="relative">
-      <button onclick="toggleDropdown('reportDropdown')" class="hover:text-yellow-300">Free Report</button>
-      <div id="reportDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
+      <button onclick="toggleDropdown('2025Dropdown')" class="hover:text-yellow-300">2025</button>
+      <div id="2025Dropdown" class="dropdown-content hidden">
+        <a href="#">Annual Forecast</a>
+        <a href="#">Love Prediction</a>
       </div>
     </div>
 
     <div class="relative">
       <button onclick="toggleDropdown('healingDropdown')" class="hover:text-yellow-300">Healing</button>
       <div id="healingDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
+        <a href="#">Reiki</a>
+        <a href="#">Crystal Therapy</a>
       </div>
     </div>
-
+    
     <div class="relative">
-      <button onclick="toggleDropdown('panchangDropdown')" class="hover:text-yellow-300">Panchang</button>
-      <div id="panchangDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
-      </div>
-    </div>
-
-    <div class="relative">
-      <button onclick="toggleDropdown('lalKitabDropdown')" class="hover:text-yellow-300">Lal Kitab</button>
-      <div id="lalKitabDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
-      </div>
-    </div>
-
-    <div class="relative">
-      <button onclick="toggleDropdown('kpDropdown')" class="hover:text-yellow-300">KP</button>
-      <div id="kpDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
-      </div>
-    </div>
-
-    <div class="relative">
-      <button onclick="toggleDropdown('compatibilityDropdown')" class="hover:text-yellow-300">Compatibility</button>
-      <div id="compatibilityDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
-      </div>
-    </div>
-
-    <div class="relative">
-      <button onclick="toggleDropdown('calcDropdown')" class="hover:text-yellow-300">Calculator</button>
-      <div id="calcDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
-      </div>
-    </div>
-
-    <div class="relative">
-      <button onclick="toggleDropdown('festivalsDropdown')" class="hover:text-yellow-300">Festivals</button>
-      <div id="festivalsDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
-      </div>
-    </div>
-
-    <div class="relative">
-      <button onclick="toggleDropdown('miscDropdown')" class="hover:text-yellow-300">Misc</button>
-      <div id="miscDropdown" class="dropdown-content hidden">
-        <a href="#">Gemstones</a>
-        <a href="#">Yantras</a>
+      <button onclick="toggleDropdown('calculatorDropdown')" class="hover:text-yellow-300">Calculator</button>
+      <div id="calculatorDropdown" class="dropdown-content hidden">
+        <a href="#">Love Calc</a>
+        <a href="#">Lucky Number</a>
       </div>
     </div>
   </div>
 </nav>
 
-<!-- Tailwind Dropdown CSS -->
+<!-- Tailwind CSS dropdown style -->
 <style>
   .dropdown-content {
     @apply absolute bg-white text-black mt-2 rounded shadow-lg min-w-[160px] z-50;
@@ -207,7 +149,7 @@
   }
 </style>
 
-<!-- Dropdown Script -->
+<!-- JavaScript -->
 <script>
   function toggleDropdown(id) {
     const dropdowns = document.querySelectorAll('.dropdown-content');
@@ -218,6 +160,11 @@
     el.classList.toggle('hidden');
   }
 
+  function toggleBottomMenu() {
+    const menu = document.getElementById('bottomMenuContent');
+    menu.classList.toggle('hidden');
+  }
+
   // Close dropdowns if clicked outside
   window.addEventListener('click', function(e) {
     if (!e.target.closest('.relative')) {
@@ -226,7 +173,11 @@
   });
 </script>
 
-      
+
+   
+ 
+
+
   <!-- Main Content -->
   <main class="px-4 py-10">
     <h1 class="text-3xl font-bold text-center mb-6">Welcome to AstroVerse</h1>
