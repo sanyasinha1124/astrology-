@@ -76,50 +76,69 @@
   
 
   <!-- Bottom Menu with Click Dropdown -->
-  <!-- Vertical Menu Container -->
-<div class="hidden lg:block mt-4 space-y-3 px-4" id="desktopMenu">
+ 
+<!-- Horizontal Menu Bar -->
+<div class="hidden lg:flex justify-start space-x-8 px-6 py-4 bg-white" id="desktopMenu">
 
-  <!-- Menu Item Template -->
+  <!-- Home Dropdown -->
   <div class="relative">
-    <button onclick="toggleDropdown('dropdownHome')" class="w-full text-left text-lg font-semibold hover:text-yellow-300">
+    <button onclick="toggleDropdown('dropdownHome')" class="font-semibold hover:text-yellow-300">
       Home
     </button>
-    <div id="dropdownHome" class="hidden mt-1 ml-4 space-y-1">
+    <div id="dropdownHome" class="hidden absolute bg-white mt-2 shadow-lg rounded-md space-y-1 p-2 z-50">
       <a href="#" class="block hover:text-yellow-200">Free Kundli</a>
       <a href="#" class="block hover:text-yellow-200">Horoscope Matching</a>
       <a href="#" class="block hover:text-yellow-200">Horoscope 2025</a>
     </div>
   </div>
 
+  <!-- Horoscope Dropdown -->
   <div class="relative">
-    <button onclick="toggleDropdown('dropdownHoroscope')" class="w-full text-left text-lg font-semibold hover:text-yellow-300">
+    <button onclick="toggleDropdown('dropdownHoroscope')" class="font-semibold hover:text-yellow-300">
       Horoscope
     </button>
-    <div id="dropdownHoroscope" class="hidden mt-1 ml-4 space-y-1">
+    <div id="dropdownHoroscope" class="hidden absolute bg-white mt-2 shadow-lg rounded-md space-y-1 p-2 z-50">
       <a href="#" class="block hover:text-yellow-200">Today</a>
       <a href="#" class="block hover:text-yellow-200">Weekly</a>
       <a href="#" class="block hover:text-yellow-200">Monthly</a>
     </div>
   </div>
 
+  <!-- Astrology Dropdown -->
   <div class="relative">
-    <button onclick="toggleDropdown('dropdownAstrology')" class="w-full text-left text-lg font-semibold hover:text-yellow-300">
+    <button onclick="toggleDropdown('dropdownAstrology')" class="font-semibold hover:text-yellow-300">
       Astrology
     </button>
-    <div id="dropdownAstrology" class="hidden mt-1 ml-4 space-y-1">
+    <div id="dropdownAstrology" class="hidden absolute bg-white mt-2 shadow-lg rounded-md space-y-1 p-2 z-50">
       <a href="#" class="block hover:text-yellow-200">Learn Astrology</a>
       <a href="#" class="block hover:text-yellow-200">Muhrat</a>
     </div>
   </div>
 
-  <!-- Add more sections similarly -->
+  <!-- Add more menu items similarly -->
+
 </div>
 
   <script>
   function toggleDropdown(id) {
     const dropdown = document.getElementById(id);
+
+    // Close all other open dropdowns
+    document.querySelectorAll('[id^="dropdown"]').forEach(d => {
+      if (d.id !== id) d.classList.add('hidden');
+    });
+
+    // Toggle the clicked one
     dropdown.classList.toggle('hidden');
   }
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function (event) {
+    const isClickInside = event.target.closest('.relative');
+    if (!isClickInside) {
+      document.querySelectorAll('[id^="dropdown"]').forEach(d => d.classList.add('hidden'));
+    }
+  });
 </script>
 
 
