@@ -76,132 +76,157 @@
   
 
   <!-- Bottom Menu with Click Dropdown -->
-  <nav class="bg-indigo-600 text-white px-4 py-3 relative">
-    <div class="hidden lg:flex space-x-8 items-center">
-      <div class="relative">
-        <button onclick="toggleDropdown('servicesDropdown')" class="hover:text-yellow-300">Home</button>
-        <div id="servicesDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Horoscope</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Kundli</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Numerology</a>
-        </div>
+ <!-- Bottom Menu with Click Dropdown -->
+<nav class="bg-indigo-600 text-white px-4 py-3 overflow-x-auto">
+  <div class="flex flex-wrap gap-4 items-center justify-start">
+    
+    <!-- Reusable Menu Button -->
+    <div class="relative">
+      <button onclick="toggleDropdown('homeDropdown')" class="hover:text-yellow-300">Home</button>
+      <div id="homeDropdown" class="dropdown-content hidden">
+        <a href="#">Horoscope</a>
+        <a href="#">Kundli</a>
+        <a href="#">Numerology</a>
       </div>
-      <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">Horoscope</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('horoscopeDropdown')" class="hover:text-yellow-300">Horoscope</button>
+      <div id="horoscopeDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
-      <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">Astrology</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('astrologyDropdown')" class="hover:text-yellow-300">Astrology</button>
+      <div id="astrologyDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
-      <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">2025</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('yearDropdown')" class="hover:text-yellow-300">2025</button>
+      <div id="yearDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
-      <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">Occult</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('occultDropdown')" class="hover:text-yellow-300">Occult</button>
+      <div id="occultDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
-      <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">Free Report</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('reportDropdown')" class="hover:text-yellow-300">Free Report</button>
+      <div id="reportDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
-      <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">Healing</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('healingDropdown')" class="hover:text-yellow-300">Healing</button>
+      <div id="healingDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
-      <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">Panchang</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('panchangDropdown')" class="hover:text-yellow-300">Panchang</button>
+      <div id="panchangDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
-     <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">Lal Kitab</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('lalKitabDropdown')" class="hover:text-yellow-300">Lal Kitab</button>
+      <div id="lalKitabDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
-      <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">KP</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('kpDropdown')" class="hover:text-yellow-300">KP</button>
+      <div id="kpDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
-      <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">Compatability</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('compatibilityDropdown')" class="hover:text-yellow-300">Compatibility</button>
+      <div id="compatibilityDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
-      <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">Calculator</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('calcDropdown')" class="hover:text-yellow-300">Calculator</button>
+      <div id="calcDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
-      <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">Festivals</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('festivalsDropdown')" class="hover:text-yellow-300">Festivals</button>
+      <div id="festivalsDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
-      <div class="relative">
-        <button onclick="toggleDropdown('productsDropdown')" class="hover:text-yellow-300">Misc</button>
-        <div id="productsDropdown" class="absolute bg-white text-black mt-2 rounded shadow-lg hidden min-w-[160px] z-50">
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Gemstones</a>
-          <a href="#" class="block px-4 py-2 hover:bg-indigo-100">Yantras</a>
-        </div>
+    </div>
+
+    <div class="relative">
+      <button onclick="toggleDropdown('miscDropdown')" class="hover:text-yellow-300">Misc</button>
+      <div id="miscDropdown" class="dropdown-content hidden">
+        <a href="#">Gemstones</a>
+        <a href="#">Yantras</a>
       </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Tailwind Dropdown CSS -->
+<style>
+  .dropdown-content {
+    @apply absolute bg-white text-black mt-2 rounded shadow-lg min-w-[160px] z-50;
+  }
+
+  .dropdown-content a {
+    @apply block px-4 py-2 hover:bg-indigo-100;
+  }
+</style>
+
+<!-- Dropdown Script -->
+<script>
+  function toggleDropdown(id) {
+    const dropdowns = document.querySelectorAll('.dropdown-content');
+    dropdowns.forEach(drop => {
+      if (drop.id !== id) drop.classList.add('hidden');
+    });
+    const el = document.getElementById(id);
+    el.classList.toggle('hidden');
+  }
+
+  // Close dropdowns if clicked outside
+  window.addEventListener('click', function(e) {
+    if (!e.target.closest('.relative')) {
+      document.querySelectorAll('.dropdown-content').forEach(d => d.classList.add('hidden'));
+    }
+  });
+</script>
+
       
-    </div>
-
-    <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="lg:hidden hidden flex-col space-y-2 mt-3 bg-white text-black p-4 rounded shadow-md">
-      <a href="#" class="block hover:text-indigo-600">Home</a>
-      <a href="#" class="block hover:text-indigo-600">About</a>
-      <a href="#" class="block hover:text-indigo-600">Contact</a>
-      <hr>
-      <button onclick="toggleDropdown('mobileServices')" class="font-semibold">Services ▼</button>
-      <div id="mobileServices" class="hidden ml-4">
-        <a href="#" class="block hover:text-indigo-600">Horoscope</a>
-        <a href="#" class="block hover:text-indigo-600">Kundli</a>
-        <a href="#" class="block hover:text-indigo-600">Numerology</a>
-      </div>
-      <button onclick="toggleDropdown('mobileProducts')" class="font-semibold mt-2">Products ▼</button>
-      <div id="mobileProducts" class="hidden ml-4">
-        <a href="#" class="block hover:text-indigo-600">Gemstones</a>
-        <a href="#" class="block hover:text-indigo-600">Yantras</a>
-      </div>
-      <a href="#" class="block hover:text-indigo-600 mt-2">Panchang</a>
-      <a href="#" class="block hover:text-indigo-600">Matchmaking</a>
-    </div>
-  </nav>
-
   <!-- Main Content -->
   <main class="px-4 py-10">
     <h1 class="text-3xl font-bold text-center mb-6">Welcome to AstroVerse</h1>
