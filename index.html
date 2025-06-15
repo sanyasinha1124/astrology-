@@ -8,23 +8,39 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
+
   <!-- Top Menu -->
- 
-  <div class="bg-indigo-100 text-sm px-4 py-2 flex justify-between items-center">
-   
-    <div>
-        
-      <div class="text-2xl font-bold text-indigo-600">AstroGuru</div>
-      <select class="bg-white border border-gray-300 px-2 py-1 rounded">
-        <option>English</option>
-        <option>Hindi</option>
-      </select>
-    </div>
-    <div class="space-x-4">
-      <a href="#" class="hover:text-indigo-600">Login</a>
-      <a href="#" class="hover:text-indigo-600">Cart (0)</a>
-    </div>
+<div class="bg-indigo-100 text-sm px-4 py-2 flex flex-col lg:flex-row justify-between items-center gap-2 lg:gap-0">
+
+  <!-- Left Section: Logo and Language -->
+  <div class="flex items-center space-x-4">
+    <div class="text-2xl font-bold text-indigo-600">AstroGuru</div>
+    <select class="bg-white border border-gray-300 px-2 py-1 rounded text-sm">
+      <option>English</option>
+      <option>Hindi</option>
+    </select>
   </div>
+
+  <!-- Right Section: Buttons -->
+  <div class="flex flex-wrap justify-center lg:justify-end items-center gap-2 mt-2 lg:mt-0">
+    <button class="bg-indigo-500 text-white px-3 py-1 rounded hover:bg-indigo-600 transition">
+      Chat with Astrologer
+    </button>
+
+    <button class="bg-yellow-400 text-black px-3 py-1 rounded hover:bg-yellow-500 transition">
+      Wallet ₹500
+    </button>
+
+    <button class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 transition">
+      Login
+    </button>
+
+    <button class="bg-white border border-gray-300 text-indigo-700 px-3 py-1 rounded hover:bg-gray-100 transition">
+      Cart (0)
+    </button>
+  </div>
+</div>
+
 
   <!-- Middle Menu -->
    <!-- Rashifal Navigation (Responsive) -->
